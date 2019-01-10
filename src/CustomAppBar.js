@@ -1,4 +1,4 @@
-import React from "react";
+import React,{Component} from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -20,25 +20,27 @@ const styles = {
   }
 };
 
-function CustomAppBar(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            WhatsApp
-          </Typography>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <div>
-            <MoreVertIcon />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+class CustomAppBar extends Component {
+  render(){
+    const { classes } = this.props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              WhatsApp
+            </Typography>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <div>
+              <MoreVertIcon />
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
 
 CustomAppBar.propTypes = {
